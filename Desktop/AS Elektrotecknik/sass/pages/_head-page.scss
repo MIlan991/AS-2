@@ -1,0 +1,205 @@
+//ABSTRACTS
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+//HEAD PAGE
+.head-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 24%;
+    left: 120px;
+    right: 120px;
+    @include xl {
+        right: 20px;
+        height: max-height;
+    }
+    @include lg {
+        flex-direction: column;
+        top: 14%;
+        left: 20px;
+        right: 20px;
+    }
+}
+
+//HEAD IMG
+.head-img {
+    position: relative;
+    @include xl {
+        left: 2%;
+    }
+    @include lg{
+        left: 5%;
+        right: 5%;
+    }
+    @include breakpoints(631px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 0%;
+        right: 0%;
+    }
+    &::before{
+        content: " ";
+        position: absolute;
+        bottom: -32px;
+        right: -78px;
+        width: 464px;
+        height: 473px;
+        border: 1px solid $white;
+        border-radius: 24px;
+        @include xl {
+            width: calc(100% - 160px);
+            height: 392px;
+            right: 32px;
+            bottom: -26px;
+        }
+        @include breakpoints(1024px){
+            bottom: -48px;
+        }
+        @include lg{
+            height: 372px;
+            bottom: -20px;
+        }
+        @include breakpoints(631px){
+            display: none;
+        }
+    }
+    .from-right{
+        transform: translateX(50%);
+    }
+    .from-right{
+        transition: opacity 300ms ease-in, transform 600ms ease-in;
+        opacity: 0;
+    }
+    .from-right.appear{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    img{
+        border-radius: 16px;
+        z-index: 1;
+        @include xl {
+            width: calc(100% - 100px);
+            height: calc(100% - 100px);
+        }
+        @include breakpoints(631px){
+            width: 464px;
+            height: 273px;
+        }
+        @include breakpoints(500px){
+            width: 364px;
+        }
+        @include mobileM{
+            width: 98%;
+            height: 98%;
+        }
+    }
+}
+
+//HEAD TEXT
+.head-text{
+    @include lg {
+        margin-bottom: 30px;
+    }
+    h1{
+        font-size: $h1Size;
+        font-family: $fontFamilyArimo;
+        font-weight: bold;
+        color: $white;
+        line-height: 55px;
+        margin-bottom: 24px;
+        @include breakpoints(749px){
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+        @include breakpoints(390px){
+            font-size: 34px;
+            line-height: 40px;
+        }
+    }
+    
+    br{
+        @include lg{
+            display: none;
+        }
+    }
+    
+    h2{
+        font-size: $h2Size;
+        font-family: $fontFamilyArimo;
+        font-weight: normal;
+        font-style: normal;
+        color: $white;
+        line-height: 37px;
+        @include breakpoints(460px){
+            font-size: 24px;
+        }
+        @include breakpoints(390px){
+            font-size: 18px;
+            line-height: 10px;
+        }
+    }
+
+    .from-left{
+        transform: translateX(-50%);
+    }
+    .from-left{
+        transition: opacity 300ms ease-in, transform 600ms ease-in;
+        opacity: 0;
+    }
+    .from-left.appear{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// HEAD FOOTER
+.head-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 45px;
+    left: 10%;
+    right: 10%;
+    @include lg {
+        bottom: 15px;
+    }
+    &:hover{
+        opacity: 0.7;
+    }
+    &:active{
+        opacity: 0.2;
+    }
+    .fade-in{
+        opacity: 0;
+        transition: opacity 800ms ease-in;
+    }
+    .fade-in.appear {
+        opacity: 1;
+    }
+p{
+    font-size: $labelSmallText;
+    font-family: $fontFamilyArimo;
+    color: $white;
+    line-height: 14px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 36px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+#mouse{
+    text-align: center;
+    margin-top: 14px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+}

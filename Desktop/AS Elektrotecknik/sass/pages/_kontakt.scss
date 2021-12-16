@@ -1,0 +1,152 @@
+//ABSTRACTS
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.kontakt{
+    background-color: $darkBlue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px;
+    overflow: hidden;
+    @include breakpoints(1325px){
+        padding-right: 40px;
+    }
+    @include breakpoints(1150px){
+        padding-left: 40px;
+        padding-top: 40px;
+    }
+    @include lg{
+        flex-direction: column;
+    }
+    @include breakpoints(660px){
+        padding-bottom: 60px;
+    }
+    @include mobileL{
+        padding: 10px;
+    }
+
+    .kontakt-text{
+        @include breakpoints(1250px){
+            margin-right: 10px;
+        }
+        br{
+        @include breakpoints(1230px){
+            display: none;
+        }
+        }}
+    .kontakt-time{
+        display: flex;
+        flex-direction: row;
+        br{
+            @include breakpoints(1150px){
+                display: block;
+            }
+        }
+        @include breakpoints(1230px){
+            flex-direction: column;
+        }
+        @include lg{
+            flex-direction: row;
+            margin-bottom: 40px;
+        }
+        @include breakpoints(529px){
+            flex-direction: column;
+            margin-bottom: 14px;
+        }
+    }
+    .montag-time{
+        display: flex;
+        flex-direction: row;
+        padding-right: 77px;
+        @include breakpoints(1230px){
+            padding-right: 30px;
+        }
+    }
+    .fritag-time{
+        display: flex;
+        flex-direction: row;
+    }
+    .map{
+        position: relative;
+        &::after{
+            content: " ";
+            position: absolute;
+            width: 464px;
+            height: 473px;
+            border: 1px solid $blue;
+            border-radius: 24px;
+            left: 202px;
+            top: -30px;
+            @include breakpoints(1325px){
+                left: 148px;
+            }
+            @include breakpoints(660px){
+                width: 386px;
+                height: 376px;
+            }
+            @include breakpoints(520px){
+                height: 308px;
+            }
+        }
+        iframe{
+            position: relative;
+            border-radius: 16px;
+            z-index: 1;
+            @include breakpoints(1230px){
+                max-width: 586px;
+                max-height: 417px;
+            }
+            @include breakpoints(660px){
+                width: 486px;
+                height: 317px;
+            }
+            @include breakpoints(520px){
+                max-width: 424px;
+                max-height: 257px;
+            }
+            @include mobileL{
+                width: 100%;
+            }
+        }
+            
+        .from-right{
+            transform: translateX(50%);
+        }
+        .from-right{
+            transition: opacity 300ms ease-in, transform 600ms ease-in;
+            opacity: 0;
+        }
+        .from-right.appear{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    h1{
+        font-size: $h1Size;
+        font-family: $fontFamilyArimo;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 55px;
+        color: $white;
+        margin-bottom: 32px;
+    }
+    h5{
+        font-family: $fontFamilyArimo;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $h5Size;
+        line-height: 24px;
+        color: $white;
+        margin-bottom: 50px;
+        @include breakpoints(1230px){
+            margin-right: 10px;
+        }
+    }
+    img{
+        filter: brightness(0) invert(1);
+        padding-right: 15px;
+    }
+}

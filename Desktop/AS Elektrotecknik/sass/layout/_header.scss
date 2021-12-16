@@ -1,0 +1,179 @@
+//ABSTRACTS
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+
+//HEAD PAGE
+.head-page {
+    position: relative;
+    background-image: url("../images/blue-cover.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    .nav-links li{
+        @include lg{
+            opacity: 0;
+        }
+    }
+    .nav-active{
+        transform: translateX(0%);
+    }
+    
+    @keyframes navLinkFade{
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    header{
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        right: 40px;
+        z-index: 12;
+        display: flex;
+        justify-content: space-between;
+        @include lg {
+            left: 120px;
+            right: 120px;
+            top: 30px;
+        }
+        @include tablet {
+            left: 40px;
+            right: 40px;
+        }
+        @include mobileL {
+            left: 10px;
+            right: 10px;
+            top: 20px;
+        }
+        ul{
+            display: flex;
+            justify-content: row;
+            list-style-type: none;
+            @include lg {
+                position: absolute;
+                right: -200px;
+                height: 820px;
+                top: 60px;
+                background-color: $darkBlue;
+                opacity: 0.8;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 430px;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+                border-radius: 12px;
+                @include tablet{
+                    right: -100px;
+                }
+                @include mobileL{
+                    width: 320px;
+                    align-items: center;
+                }
+            }
+            li{
+                @include lg{
+                    padding-top: 60px;
+                    padding-bottom: 16px;
+                };
+            }
+        }
+        a{
+            padding: 10px 16px;
+            color: $white;
+            font-weight: bold;
+            font-family: $fontFamilyArimo;
+            font-size: $buttonSize;
+            line-height: 17.25px;
+            cursor: pointer;
+            text-decoration: none;
+            @include lg{
+                font-size: 20px;
+            }
+            &:hover{
+                opacity: 0.7;
+            }
+            &:active{
+                opacity: 0.2;
+            }
+        }
+        .kontaktHover{
+            border: 1px $white solid;
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: 15px 30px;
+            margin-left: 15px;
+            @include lg{
+                margin: 0px;
+                padding: 0px;
+                border: none;
+            }
+            &:hover{
+                background-color: $white;
+                color: $blue;
+                opacity: 1;
+                transition: 0.4s;
+                @include lg{
+                    background-color: $darkBlue;
+                    color: $white;
+                    opacity: 0.7;
+                    transition: 0s;
+                }
+            }
+            &:active{
+                opacity: 0.2;
+            }
+        }
+        .burger {
+            display: none;
+            cursor: pointer;
+            border-radius: 1px solid $white;
+            @include lg{
+                display: block;
+            }
+        }
+        
+        .burger div {
+            width: 35px;
+            height: 4px;
+            background-color: $white;
+            margin: 6px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+        .toggle .line1{
+            transform: rotate(-45deg) translate(-6px, 8px);
+        }
+        .toggle .line2{
+            opacity: 0;
+        }
+        .toggle .line3{
+            transform: rotate(45deg) translate(-6px, -8px);
+        }
+    }
+
+    .fade-in{
+        opacity: 0;
+        transition: opacity 800ms ease-in-out;
+    }
+    .fade-in.appear {
+        opacity: 1;
+    }
+}
+#head-logo{
+    filter: brightness(0) invert(1);
+    @include mobileS {
+        width: 200px;
+        height: 27px;
+    }
+}
+
+
+// HAMBURGER NAV-BAR

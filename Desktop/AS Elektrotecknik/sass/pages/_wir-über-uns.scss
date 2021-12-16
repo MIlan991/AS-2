@@ -1,0 +1,219 @@
+//ABSTRACTS
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.wir{
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    @include lg{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &:before{
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 90px;
+        width: 565px;
+        height: 473px;
+        border-radius: 0 24px 24px 0;
+        border-top: 1px solid $blue;
+        border-right: 1px solid $blue;
+        border-bottom: 1px solid $blue;
+        border-left: none;
+        @include lg {
+            top: 260px;
+            width: 665px;
+        }
+        @include breakpoints(680px) {
+            width: 525px;
+        }
+        @include breakpoints(580px) {
+            width: 425px;
+        }
+        @include breakpoints(480px){
+            height: 403px;
+            width: 380px;
+            top: 180px;
+            opacity: 0.6;
+        }
+        @include breakpoints(390px){
+            width: 280px;
+        }
+        @include mobileM {
+            top: 70px;
+        }
+        @include mobileL {
+            width: 260px;
+        }
+    }
+    .wir-imgs{
+        position: relative;
+        margin-bottom: 740px;
+        @include lg {
+            margin-bottom: 660px;
+            margin-top: 160px;
+        }
+        @include breakpoints(580px) {
+            margin-bottom: 580px;
+        }
+        @include breakpoints(480px){
+            margin-bottom: 480px;
+        }
+        @include mobileM {
+            margin-bottom: 360px;
+        }
+        .plumber{
+            z-index: 3;
+            position: absolute;
+            top: 110px;
+            left: 202px;
+            @include xl {
+                left: 120px;
+            }
+            @include breakpoints(1110px){
+                left: 80px;
+            }
+            @include lg {
+                left: -200px;
+            }
+            @include tablet{
+                height: 450px;
+                left: -164px;
+                top: 190px;
+            }
+            @include breakpoints(580px) {
+                height: 380px;
+                top: 194px;
+                left: -164px;
+            }
+            @include breakpoints(480px){
+                display: none;
+            }
+        }
+        .fade-in{
+            opacity: 0;
+            transition: opacity 800ms ease-in;
+        }
+        .fade-in.appear {
+            opacity: 1;
+        }
+        .plumber-background{
+            z-index: 2;
+            width: 588px;
+            height: 436px;
+            border-radius: 16px;
+            position: absolute;
+            left: 120px;
+            top: 204px;
+            @include xl {
+                left: 40px;
+            }
+            @include breakpoints(1110px){
+                width: 488px;
+            }
+            @include lg {
+                left: -290px;
+                width: 588px;
+            }
+            @include tablet{
+                height: 366px;
+                top: 274px;
+            }
+            @include breakpoints(680px) {
+                width: 445px;
+                left: -210px;
+            }
+            @include breakpoints(580px) {
+                height: 300px;
+                top: 304;
+                left: -220px;
+            }
+            @include breakpoints(480px){
+                display: none;
+            }
+        }
+    }
+    .wir-text{
+        position: absolute;
+        top: 250px;
+        right: 133px;
+        @include breakpoints(1310px){
+            right: 20px;
+        }
+        @include breakpoints(1110px){
+            left: 660px;
+            top: 160px;
+        }
+        @include lg {
+            left: 80px;
+            top: 60px;
+        }
+        @include tablet{
+            right: 80px;
+        }
+        @include breakpoints(580px) {
+            left: 20px;
+            top: 20px;
+        }
+        @include breakpoints(480px){
+            top: 60px;
+            left: 60px;
+            right: 80px;
+        }
+        @include mobileM {
+            top: 20px;
+            left: 20px;
+            right: 40px;
+        }
+        @include mobileL {
+            right: 20px;
+        }
+        h1{
+            font-family: $fontFamilyArimo;
+            font-style: normal;
+            font-weight: bold;
+            font-size: $h1Size;
+            line-height: 55px;
+            color: $darkBlue;
+            margin-bottom: 30px;
+            @include breakpoints(480px){
+                font-size: 40px;
+            }
+        }
+        h4{
+            font-family: $fontFamilyArimo;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $h4Size;
+            line-height: 30px;
+            color: $darkBlue;
+            @include breakpoints(480px){
+                font: 10px;
+            }
+        }
+        br{
+            @include lg {
+                display: none;
+            }}
+
+        .from-right{
+            transform: translateX(50%);
+        }
+        .from-right{
+            transition: opacity 300ms ease-in, transform 600ms ease-in;
+            opacity: 0;
+        }
+        .from-right.appear{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}

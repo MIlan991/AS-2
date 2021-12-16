@@ -1,0 +1,120 @@
+//ABSTRACTS
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+//PAGES
+@import "../pages/contact";
+
+.footer{
+    position: relative;
+    background-color: $darkBlueFooter;
+    padding: 72px 130px 72px 120px;
+    @include breakpoints(1298px){
+        padding-right: 20px;
+    }
+    @include xl{
+        padding-left: 20px;
+    }
+    @include lg{
+        padding-bottom: 42px;
+    }
+    @include breakpoints(560px){
+        padding-right: 10px;
+    }
+    h5{
+        font-size: $h5Size;
+        font-family: $fontFamilyArimo;
+        font-weight: bold;
+        font-style: normal;
+        line-height: 18px;
+        color: $white;
+    }
+    a{
+        font-size: $buttonSize;
+        font-family: $fontFamilyArimo;
+        font-weight: bold;
+        font-style: normal;
+        line-height: 17px;
+        color: $white;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+.nav-bar-footer{
+    position: absolute;
+    z-index: 12;
+    display: flex;
+    justify-content: space-between;
+    top: 72px;
+    left: 120px;
+    right: 130px;
+    @include xl{
+        right: 20px;
+        left: 20px;
+    }
+    @include lg{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        left: 60px;
+    }
+    @include breakpoints(560px){
+        top: 10px;
+        left: 10px;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        @include lg{
+            flex-direction: column;
+        }
+    }
+    li{
+        padding-left: 24px;
+        @include lg{
+            padding-top: 24px;
+            padding-left: 0;
+        }
+        &:hover{
+            opacity: 0.2;
+        }
+        &:active{
+            opacity: 0.7;
+        }
+    }
+    img{
+        cursor: pointer;
+        &:hover{
+            opacity: 0.2;
+        }
+        &:active{
+            opacity: 0.7;
+        }
+    }
+}
+
+.footer-footer{
+    h5{
+        position: relative;
+        @include lg{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &::after{
+            position: absolute;
+            content: " ";
+            background-color: $white;
+            min-width: 79%;
+            height: 1px;
+            right: 0px;
+            top: 8px;
+            @include lg{
+                width: 100%;
+                top: -22px;
+            }
+        }
+    }
+}

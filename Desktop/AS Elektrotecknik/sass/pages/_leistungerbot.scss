@@ -1,0 +1,188 @@
+//ABSTRACTS
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+//COMPONENTS
+@import "../components/buttons";
+
+.leistungerbot{
+    display: relative;
+    background-color: $lightBlue;
+    padding: 120px;
+    @include breakpoints(1127px){
+        padding: 40px;
+    }
+    @include mobileL{
+        padding: 10px;
+    }
+    .leistungerbot-text{
+        h1{
+            font-size: $h1Size;
+            font-family: $fontFamilyArimo;
+            line-height: 55px;
+            font-style: normal;
+            font-weight: bold;
+            color: $darkBlue;
+            margin: 12px auto 24px auto;
+            @include mobileM{
+                font-size: 40px;
+            }
+        }
+        h4{
+            font-size: $h4Size;
+            font-family: $fontFamilyArimo;
+            font-weight: normal;
+            font-style: normal;
+            line-height: 21px;
+            color: $lightGrey;
+        }
+        p{
+            font-size: $pSize;
+            font-family: $fontFamilyArimo;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 30px;
+            @include mobileM{
+                padding-right: 20px;
+            }
+        }
+    }
+    .leistungerbot-imgs{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-gap: 24px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $blue;
+        padding-bottom: 64px;
+        margin: 40px auto 64px auto;
+        @include breakpoints(967px){
+            grid-template-columns: auto auto;
+            justify-content: center;
+        };
+        @include breakpoints(665px){
+            grid-template-columns: auto;
+            justify-content: space-around;
+        }
+        @include breakpointsMin(1736px){
+            grid-template-columns: auto auto auto auto;
+        }
+        .leistungerbot-img{
+            height: 300px;
+            width: 280px;
+            background-color: $white;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            &:hover{
+                border: 2px solid $blue;
+                transition: 0.4s;
+            }
+        }
+        .leistungerbot-logo-text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h3{
+                font-size: $h3Size;
+                font-family: $fontFamilyArimo;
+                font-weight: bold;
+                font-style: normal;
+                line-height: 23px;
+                text-align: center;
+                color: $darkBlue;
+            }
+        }
+
+        .leistungerbot-logo-background{
+            height: 120px;
+            width: 120px;
+            background-color: $lightBlue;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+
+    .leistungerbot-footer{
+        h4{
+            font-size: $h4Size;
+            font-family: $fontFamilyArimo;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 21px;
+            color: $darkGrey;
+            margin-left: 24px;
+            @include mobileM{
+                display: none;
+            }
+        }
+        p{
+            font-size: $h4Size;
+            font-family: $fontFamilyArimo;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 30px;
+            color: $darkGrey;
+            br{
+                @include breakpoints(665px){
+                    display: none;
+                }
+            }
+        }
+        a{
+            cursor: pointer;
+            &:hover{
+                color: $blue;
+            }
+            &:active{
+                opacity: 0.2;
+            }
+        }
+        .leistungerbot-contacts{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-top: 70px;
+            flex-wrap: wrap;
+            @include breakpoints(967px){
+                flex-direction: column
+            };
+            @include mobileM{
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 20px;
+            };
+        }
+        .leistungerbot-contact{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-right: 63px;
+            @include breakpoints(1279px){
+                padding-bottom: 30px;
+            }
+            @include breakpoints(665px){
+                margin-bottom: 30px;
+            };
+            @include mobileM{
+                padding-right: 20px;
+                margin-top: 10px
+            };
+        }
+    }
+
+    .fade-in{
+        opacity: 0;
+        transition: opacity 800ms ease-in;
+    }
+    .fade-in.appear {
+        opacity: 1;
+    }
+}
