@@ -9,17 +9,18 @@
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    top: 24%;
+    top: 50%;
+    transform: translate(0%, -50%);
     left: 120px;
     right: 120px;
-    @include xl {
-        right: 20px;
-        height: max-height;
-    }
-    @include lg {
-        flex-direction: column;
-        top: 14%;
+    @include xl{
         left: 20px;
+        right: 100px;
+    }
+    @include lg{
+        flex-direction: column;
+    }
+    @include tablet{
         right: 20px;
     }
 }
@@ -27,19 +28,10 @@
 //HEAD IMG
 .head-img {
     position: relative;
-    @include xl {
-        left: 2%;
-    }
-    @include lg{
-        left: 5%;
-        right: 5%;
-    }
-    @include breakpoints(631px){
+    @include tablet{
         display: flex;
-        align-items: center;
         justify-content: center;
-        left: 0%;
-        right: 0%;
+        align-items: center;
     }
     &::before{
         content: " ";
@@ -50,20 +42,10 @@
         height: 473px;
         border: 1px solid $white;
         border-radius: 24px;
-        @include xl {
-            width: calc(100% - 160px);
-            height: 392px;
-            right: 32px;
-            bottom: -26px;
-        }
-        @include breakpoints(1024px){
-            bottom: -48px;
-        }
         @include lg{
-            height: 372px;
-            bottom: -20px;
+            height: 364px;
         }
-        @include breakpoints(631px){
+        @include tablet {
             display: none;
         }
     }
@@ -81,20 +63,15 @@
     img{
         border-radius: 16px;
         z-index: 1;
-        @include xl {
-            width: calc(100% - 100px);
-            height: calc(100% - 100px);
+        @include lg{
+            width: calc(100% - 140px);
+            height: calc(100% - 140px);
         }
-        @include breakpoints(631px){
-            width: 464px;
-            height: 273px;
-        }
-        @include breakpoints(500px){
-            width: 364px;
+        @include mobileL{
+            width: 80%;
         }
         @include mobileM{
-            width: 98%;
-            height: 98%;
+            width: 90%;
         }
     }
 }
@@ -111,14 +88,6 @@
         color: $white;
         line-height: 55px;
         margin-bottom: 24px;
-        @include breakpoints(749px){
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-        @include breakpoints(390px){
-            font-size: 34px;
-            line-height: 40px;
-        }
     }
     
     br{
@@ -134,13 +103,6 @@
         font-style: normal;
         color: $white;
         line-height: 37px;
-        @include breakpoints(460px){
-            font-size: 24px;
-        }
-        @include breakpoints(390px){
-            font-size: 18px;
-            line-height: 10px;
-        }
     }
 
     .from-left{
@@ -166,7 +128,7 @@
     bottom: 45px;
     left: 10%;
     right: 10%;
-    @include lg {
+    @include breakpoints(829px){
         bottom: 15px;
     }
     &:hover{
